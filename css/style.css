@@ -92,7 +92,22 @@
 .footer-message{
     width: 100%;
     height: calc(100% - 560px);
-    background-color: black;
+    background-color: rosybrown;
+    align-items: center;
+    display: flex;
+}
+.fo-center{
+    flex-grow: 1;
+    height: calc(100% - 10px);
+    margin-top: 5px;
+    line-height: calc(100% - 10px);
+}
+.fo-center input{
+    width: 100%;
+    height: calc(100% - 10px);
+}
+.fo-center input::placeholder{
+    padding-left: 20px;
 }
 .img{
     width: 40px;
