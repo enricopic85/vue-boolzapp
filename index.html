@@ -39,7 +39,7 @@
                    <input type="text" placeholder= " Cerca o inizia una nuova chat" >
                </div>
                <div class="user">
-                    <div class="contact" :class="i % 2===0 ? 'grey' : 'white'" v-for="(contact,i) in contacts">
+                    <div class="contact"  v-for="(contact,i) in contacts">
                         <div class="img flex mr-20" >
                             <img :src="getContactImg(contact)" alt="contatto">
                             <div class="contact-name ml-15">{{contact.name}}</div>

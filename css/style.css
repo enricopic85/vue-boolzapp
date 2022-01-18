@@ -236,3 +236,10 @@
 .container-message{
     margin-top: 30px;
 }
+.find-chat input::placeholder{
+    padding-left: 20px;
+    
+}
+.find-chat input::placeholder::before{
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f610";
+}
