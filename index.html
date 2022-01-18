@@ -27,13 +27,13 @@
                    </div>
                </div>
                <div class="notifications">
-                <div class="drin ml-15">
-                    <i class="fas fa-bell-slash "></i>
-                </div>
-                <div class="message-notif ml-5">
-                    <p>Ricevi notifiche di nuovi messaggi</p>
-                    <a href="#">Attiva notifiche desktop</a>
-                </div>
+                    <div class="drin ml-15">
+                        <i class="fas fa-bell-slash "></i>
+                    </div>
+                    <div class="message-notif ml-5">
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+                        <a href="#">Attiva notifiche desktop</a>
+                    </div>
                </div>
                <div class="find-chat">
                    <input type="text" placeholder= " Cerca o inizia una nuova chat" >
@@ -41,15 +41,51 @@
                <div class="user">
                     <div class="contact" :class="i % 2===0 ? 'grey' : 'white'" v-for="(contact,i) in contacts">
                         <div class="img flex mr-20" >
-                            <img :src="getContactImg(contact)" alt="">
+                            <img :src="getContactImg(contact)" alt="contatto">
                             <div class="contact-name ml-15">{{contact.name}}</div>
                         </div>
                     </div>
                </div>
            </div>
            <div class="right">
-               <div class="chat"></div>
-               <div class="body-message"></div>
+               <div class="chat">
+                   <div class="chat-active">
+                       <div class="user-active ml-15">
+                           <img src="img/avatar_io.jpg" alt="">
+                       </div>
+                       <div class="name-active ml-5">
+                           <p>Michele</p>
+                           <p>Ultimo accesso oggi alle</p>
+                       </div>
+                   </div>
+                   <div class="action">
+                        <i class="fas fa-circle-notch ml-10"></i>
+                        <i class="fas fa-comment-alt ml-10"></i>
+                        <i class="fas fa-ellipsis-v mr-20 ml-10"></i>
+                   </div>
+               </div>   
+               <div class="body-message">
+                  <div class="container-message">
+                    <div class="container-message-sent">
+                        <div class="message-sent">
+                            <p class="tas ml-5 mt-10">Hai portato a spasso il cane</p>
+                            <p class="tae">13/12/2009</p>
+                        </div>
+                    </div>
+                    <div class="container-message-sent">
+                      <div class="message-sent">
+                          <p class="tas ml-5 mt-10">Hai portato a spasso il cane</p>
+                          <p class="tae">13/12/2009</p>
+                      </div>
+                    </div>
+                    <div class="container-message-received">
+                      <div class="message-received">
+                          <p class="tas ml-5 mt-10">Hai portato a spasso il cane</p>
+                          <p class="tae">13/12/2009</p>
+                      </div>
+                    </div>
+                  </div>
+               </div>
                <div class="footer-message"></div>
            </div>
        </div>
