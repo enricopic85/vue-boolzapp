@@ -10,20 +10,25 @@
     <script src=" https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <!-- <div class="contacts" v-for="contact in contacts ">
-            <img :src="img/avatar+contact.avatar.jpg" alt="">
-            <p>{{contact.name}}</p>
-        </div> -->
-        <div class="left">
-            <div class="user-name"></div>
-            <div class="notifications"></div>
-            <div class="contacts"></div>
-        </div>
-        <div class="right">
-            
-        </div>
+    <div class="back" id="app">
+       <div class="container">
+           <div class="left">
+               <div class="user-name"></div>
+               <div class="notifications"></div>
+               <div class="user"></div>
+           </div>
+           <div class="right">
+               <div class="chat">
+               </div>
+           </div>
+       </div>
     </div>
+    
   <script src="js/script.js"></script>  
 </body>
 </html>
+
+<!-- <div v-for="contact in contacts ">
+                    <img :src="getContactImg(contact)" alt="">
+                    <p>{{contact.name}}</p>
+                </div> -->
