@@ -30,10 +30,10 @@
     width: 100%;
 }
 .back{
-    background-color: coral;
+    background-color: grey;
     height: 100vh;
-    
 }
+
 .container{
     width: 1100px;
     height: 95%;
@@ -80,7 +80,7 @@
 .chat{
     width: 100%;
     height: 50px;
-    background-color: blue;
+    background-color: grey;
     display: flex;
     align-items: center;
 }
@@ -92,7 +92,7 @@
 .footer-message{
     width: 100%;
     height: calc(100% - 560px);
-    background-color: rosybrown;
+    background-color: rgb(148, 107, 107);
     align-items: center;
     display: flex;
 }
@@ -174,45 +174,19 @@
     display: flex;
     flex-grow: 1;
 }
-/* .message-sent,.message-received{
-    width: 100%;
-    margin-top: 10px;
-    display: flex;
-}
-.message-sent{
-    justify-content: end;
-}
-.message-received{
-    justify-content: start;
-}
-.sent,.received{
-    width: 130px;
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid black;
-}
-.sent{
-    background-color: chartreuse;
-    margin-right: 20px;
-}
-.received{
-    margin-left: 20px;
-    background-color: white;
-     display: flex;
-    flex-wrap: wrap;
-}  */
+
 .tas{
     text-align: start;
 }
 .tae{
     text-align: end;
 }
-.container-message-sent{
+.sent{
     margin-top: 10px;
     display: flex;
     justify-content: end;
 }
-.message-sent{
+.sent > .message{
     background-color: chartreuse;
     border: 1px solid black;
     width: 300px;
@@ -220,12 +194,12 @@
     border-radius: 10px;
     margin-right: 30px;
 }
-.container-message-received{
+.received{
     margin-top: 10px;
     display: flex;
     justify-content: start;
 }
-.message-received{
+.received > .message{
     background-color: white;
     border: 1px solid black;
     width: 300px;
@@ -240,6 +214,7 @@
     padding-left: 20px;
     
 }
-.find-chat input::placeholder::before{
-    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f610";
+
+.fss{
+    font-size: 10px;
 }

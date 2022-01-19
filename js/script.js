@@ -87,11 +87,15 @@ new Vue({
                 ],
             },
         ],
+        currentIndex:0
         
     },
     methods:{
         getContactImg(contact){
             return `img/avatar${contact.avatar}.jpg`
+        },
+        thisContact(index){
+            this.currentIndex=index
         }
     }
         

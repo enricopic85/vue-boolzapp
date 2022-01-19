@@ -36,10 +36,10 @@
                     </div>
                </div>
                <div class="find-chat">
-                   <input type="text" placeholder= " Cerca o inizia una nuova chat" >
+                   <input style="font-family: 'Font Awesome 5 Free'; font-weight: 900;" type="text" placeholder= " &#xf610; Cerca o inizia una nuova chat" >
                </div>
                <div class="user">
-                    <div class="contact"  v-for="(contact,i) in contacts">
+                    <div class="contact"  v-for="(contact,i) in contacts" @click="thisContact(i)">
                         <div class="img flex mr-20" >
                             <img :src="getContactImg(contact)" alt="contatto">
                             <div class="contact-name ml-15">{{contact.name}}</div>
@@ -51,39 +51,27 @@
                <div class="chat">
                    <div class="chat-active">
                        <div class="user-active ml-15">
-                           <img src="img/avatar_io.jpg" alt="">
+                           <img :src="getContactImg(contacts[currentIndex])" alt="">
                        </div>
                        <div class="name-active ml-5">
-                           <p>Michele</p>
-                           <p>Ultimo accesso oggi alle</p>
+                           <p>{{contacts[currentIndex].name}}</p>
+                           <p>Ultimo accesso oggi alle {{contacts[currentIndex].messages.date}}</p>
                        </div>
                    </div>
                    <div class="action">
-                        <i class="fas fa-circle-notch ml-10"></i>
-                        <i class="fas fa-comment-alt ml-10"></i>
+                        <i class="fas fa-search  ml-10"></i>
+                        <i class="fas fa-paperclip ml-10 "></i>
                         <i class="fas fa-ellipsis-v mr-20 ml-10"></i>
                    </div>
                </div>   
                <div class="body-message">
                   <div class="container-message">
-                    <div class="container-message-sent">
-                        <div class="message-sent">
-                            <p class="tas ml-5 mt-10">Hai portato a spasso il cane</p>
-                            <p class="tae">13/12/2009</p>
+                      <div v-for="message in contacts[currentIndex].messages" :class="message.status">
+                        <div class="message">
+                            <p class="tas ml-5 mt-10">{{message.text}}</p>
+                            <p class="tae fss mr-20">{{message.date}}</p>
                         </div>
-                    </div>
-                    <div class="container-message-sent">
-                      <div class="message-sent">
-                          <p class="tas ml-5 mt-10">Hai portato a spasso il cane</p>
-                          <p class="tae">13/12/2009</p>
                       </div>
-                    </div>
-                    <div class="container-message-received">
-                      <div class="message-received">
-                          <p class="tas ml-5 mt-10">Hai portato a spasso il cane</p>
-                          <p class="tae">13/12/2009</p>
-                      </div>
-                    </div>
                   </div>
                </div>
                <div class="footer-message">
@@ -105,7 +93,3 @@
 </body>
 </html>
 
-<!-- <div v-for="contact in contacts ">
-                    <img :src="getContactImg(contact)" alt="">
-                    <p>{{contact.name}}</p>
-                </div> -->
