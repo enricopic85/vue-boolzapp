@@ -42,7 +42,7 @@
                           
                </div>
                <div class="user" >
-                    <div class="contact"  v-for="(contact,i) in contacts" @click="thisContact(i)">
+                    <div class="contact" v-if="searchName(contact)" v-for="(contact,i) in contacts" @click="thisContact(i)">
                         <div class="img flex mr-20" >
                             <img :src="getContactImg(contact)" alt="contatto">
                             <div class="contact-name ml-15">{{contact.name}}</div>

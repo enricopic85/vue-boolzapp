@@ -109,12 +109,12 @@ new Vue({
                 this.contacts[this.currentIndex].messages.push({date:'10/01/2020 15:30:55',text:'ciaone!',status:'received'})
             }, 1000);
         },
-        searchName(){
-            const filtering=this.contacts[currentIndex].name.filter(function(element){
-                return this.search.includes(element.name);
-            })
-            return filtering;
-        },
+        searchName(element){
+            return  element.name.includes(this.search)
+            if (this.search==='') {
+                return false
+            }
+        }
 
     }
         
