@@ -110,9 +110,10 @@ new Vue({
             }, 1000);
         },
         searchName(element){
-            return  element.name.toLowerCase().includes(this.search.toLowerCase())
+            if (element.name.toLowerCase().startsWith(this.search.toLowerCase()) || this.search==="") {
+                return true
+            }
         }
-
     }
         
     
