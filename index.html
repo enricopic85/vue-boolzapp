@@ -55,7 +55,7 @@
                        </div>
                        <div class="name-active ml-5">
                            <p>{{contacts[currentIndex].name}}</p>
-                           <p>Ultimo accesso oggi alle {{contacts[currentIndex].messages.date}}</p>
+                           <p>Ultimo accesso oggi alle {{lastContactDate(contacts[currentIndex])}} </p>
                        </div>
                    </div>
                    <div class="action">
@@ -79,7 +79,7 @@
                     <i class="far fa-smile ml-15 mr-20"></i>
                    </div>
                    <div class="fo-center">
-                       <input type="text" placeholder="scrivi un messaggio">
+                       <input type="text" placeholder="scrivi un messaggio" v-model="newText" @keyup.enter="addText" >
                    </div>
                    <div class="fo-right">
                     <i class="fas fa-microphone mr-20 ml-15"></i>
@@ -93,3 +93,4 @@
 </body>
 </html>
 
+<!--  -->

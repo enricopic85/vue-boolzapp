@@ -87,8 +87,8 @@ new Vue({
                 ],
             },
         ],
-        currentIndex:0
-        
+        currentIndex:0,
+        newText:''
     },
     methods:{
         getContactImg(contact){
@@ -96,6 +96,17 @@ new Vue({
         },
         thisContact(index){
             this.currentIndex=index
+        },
+        lastContactDate(contact){
+            const lastIndex=contact.messages.length -1;
+            return contact.messages[lastIndex].date;
+        },
+        addText(){
+            this.contacts[this.currentIndex].messages.push({date:'10/01/2020 15:30:55',text:this.newText,status:'sent'})
+            this.newText='';
+            setTimeout(() => {
+                this.contacts[this.currentIndex].messages.push({date:'10/01/2020 15:30:55',text:'suca',status:'received'})
+            }, 1000);
         }
     }
         
