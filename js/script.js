@@ -89,7 +89,8 @@ new Vue({
         ],
         currentIndex:0,
         newText:'',
-        search:''
+        search:'',
+        upHere:false
     },
     methods:{
         getContactImg(contact){
@@ -103,16 +104,22 @@ new Vue({
             return contact.messages[lastIndex].date;
         },
         addText(){
-            this.contacts[this.currentIndex].messages.push({date:'10/01/2020 15:30:55',text:this.newText,status:'sent'})
+            this.contacts[this.currentIndex].messages.push({date:dayjs().format("DD/MM/YYYY HH:mm:ss"),text:this.newText,status:'sent'})
             this.newText='';
             setTimeout(() => {
-                this.contacts[this.currentIndex].messages.push({date:'10/01/2020 15:30:55',text:'ciaone!',status:'received'})
+                this.contacts[this.currentIndex].messages.push({date:dayjs().format("DD/MM/YYYY HH:mm:ss"),text:'ciaone!',status:'received'})
             }, 1000);
         },
         searchName(element){
             if (element.name.toLowerCase().startsWith(this.search.toLowerCase()) || this.search==="") {
                 return true
             }
+        },
+        showModal(){
+            this.upHere = !this.upHere
+        },
+        deleteMessage(index){
+            this.contacts[this.currentIndex].messages.splice(index,1)
         }
     }
         

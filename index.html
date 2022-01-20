@@ -73,10 +73,14 @@
                </div>   
                <div class="body-message">
                   <div class="container-message">
-                      <div v-for="message in contacts[currentIndex].messages" :class="message.status">
-                        <div class="message">
-                           <p class="w-100 tae mt-1 mr-20"> <i class="fas fa-angle-down"></i></p>
-                            <p class="tas ml-5  w-100">{{message.text}}</p>
+                      <div v-for="(message,i) in contacts[currentIndex].messages" :class="message.status">
+                        <div class="message" >
+                           <p class="w-100 tae mt-1 mr-20 icon" @click="showModal"> <i class="fas fa-angle-down"></i></p>
+                           <div v-if="upHere" class="modal">
+                               <p class="mt-30">Message info</p>
+                               <p @click="deleteMessage(i)">Delete message</p>
+                           </div>
+                            <p class="tas ml-5  w-100 ">{{message.text}}</p>
                             <p class="tae fss mr-20 w-100">{{message.date}}</p>
                         </div>
                       </div>
