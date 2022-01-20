@@ -21,6 +21,9 @@
 .mt-10{
     margin-top: 10px;
 }
+.mt-1{
+    margin-top: 1px;
+}
 .fs{
     justify-content: flex-start;
     width: 100%;
@@ -29,11 +32,25 @@
     justify-content: flex-end;
     width: 100%;
 }
+.fss{
+    font-size: 10px;
+}
+.flex{
+    display: flex;
+}
+.grey{
+    background-color: grey;
+}
+.white{
+    background-color: white;
+}
 .back{
     background-color: grey;
     height: 100vh;
 }
-
+.w-100{
+    width: 100%;
+}
 .container{
     width: 1100px;
     height: 95%;
@@ -149,15 +166,7 @@
     height: 70px;
     align-items: center;
 }
-.flex{
-    display: flex;
-}
-.grey{
-    background-color: grey;
-}
-.white{
-    background-color: white;
-}
+
 .drin img{
     width: 100%;
     border-radius: 50%;
@@ -193,6 +202,8 @@
     height: 50px;
     border-radius: 10px;
     margin-right: 30px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .received{
     margin-top: 10px;
@@ -206,6 +217,8 @@
     height: 50px;
     border-radius: 10px;
     margin-left: 30px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .container-message{
     margin-top: 30px;
@@ -215,6 +228,4 @@
     
 }
 
-.fss{
-    font-size: 10px;
-}
+

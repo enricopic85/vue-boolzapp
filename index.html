@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
     <script src=" https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -38,11 +39,14 @@
                <div class="find-chat">
                    <input style="font-family: 'Font Awesome 5 Free'; font-weight: 900;" type="text" 
                           placeholder= " &#xf610; Cerca o inizia una nuova chat"
-                          v-model="search" >
-                          
+                          v-model="search">          
                </div>
                <div class="user" >
-                    <div class="contact" v-if="searchName(contact)" v-for="(contact,i) in contacts" @click="thisContact(i)">
+                    <div class="contact" 
+                         v-if="searchName(contact)" 
+                         v-for="(contact,i) in contacts" 
+                         @click="thisContact(i)"
+                         >
                         <div class="img flex mr-20" >
                             <img :src="getContactImg(contact)" alt="contatto">
                             <div class="contact-name ml-15">{{contact.name}}</div>
@@ -71,8 +75,9 @@
                   <div class="container-message">
                       <div v-for="message in contacts[currentIndex].messages" :class="message.status">
                         <div class="message">
-                            <p class="tas ml-5 mt-10">{{message.text}}</p>
-                            <p class="tae fss mr-20">{{message.date}}</p>
+                           <p class="w-100 tae mt-1 mr-20"> <i class="fas fa-angle-down"></i></p>
+                            <p class="tas ml-5  w-100">{{message.text}}</p>
+                            <p class="tae fss mr-20 w-100">{{message.date}}</p>
                         </div>
                       </div>
                   </div>
