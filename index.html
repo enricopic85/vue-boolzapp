@@ -76,9 +76,9 @@
                       <div v-for="(message,i) in contacts[currentIndex].messages" :class="message.status">
                         <div class="message" >
                            <p class="w-100 tae mt-1 mr-20 icon" @click="showModalCurrent(i); showModal()"> <i class="fas fa-angle-down"></i></p>
-                           <div v-if="currentMessage===i " :class="modal">
+                           <div v-if="currentMessage===i " class="modal">
                                <p class="mt-30">Message info</p>
-                               <p @click="deleteMessage(i)">Delete message</p>
+                               <p @click.stop="deleteMessage(i)">Delete message</p>
                            </div>
                             <p class="tas ml-5  w-100 ">{{message.text}}</p>
                             <p class="tae fss mr-20 w-100">{{message.date}}</p>

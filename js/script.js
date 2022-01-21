@@ -90,7 +90,8 @@ new Vue({
         currentIndex:0,
         newText:'',
         search:'',
-        upHere:false
+        upHere:true,
+        currentMessage:false
     },
     methods:{
         getContactImg(contact){
@@ -115,12 +116,17 @@ new Vue({
                 return true
             }
         },
-        showModal(i){
-            this.upHere = !this.upHere
-            console.log(this.contacts[this.currentIndex].messages[i].text)
+        showModal(){
+            this.upHere=!this.upHere
+        },
+        showModalCurrent(i){
+            this.currentMessage=i
         },
         deleteMessage(index){
             this.contacts[this.currentIndex].messages.splice(index,1)
+            if (this.upHere) {
+                this.upHere=!this.upHere
+            }
         }
     }
         
