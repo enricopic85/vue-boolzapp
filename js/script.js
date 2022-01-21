@@ -115,8 +115,9 @@ new Vue({
                 return true
             }
         },
-        showModal(){
+        showModal(i){
             this.upHere = !this.upHere
+            console.log(this.contacts[this.currentIndex].messages[i].text)
         },
         deleteMessage(index){
             this.contacts[this.currentIndex].messages.splice(index,1)
